@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- For Google Icon -->
+</head>
+<body>
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-md-5">
+                <div class="card mt-6">
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">Register Account</h3>
+                        <form method="POST" action="{% url 'register' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username">
+                            </div>
+                            <div class="form-group">
+                                <label for="Gender">Gender</label>
+                                <div class="form-check form-check-inline ml-3">
+                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
+                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                  </div>
+                                  <div class="form-check form-check-inline ml-3">
+                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female">
+                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-sm mt-4">Sign Up</button>
+                            <div class="text-center mt-4">
+                                <button type="button" class="btn btn-danger btn-block btn-sm" onclick="googleLogin()">
+                                    <i class="fab fa-google pr-2"></i> Sign up with Google
+                                </button>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="#" class="btn btn-secondary btn-sm">Already have an account? Log in</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        function googleLogin() {
+            alert("Google login functionality not implemented.");
+        }
+    </script>
+</body>
+</html>

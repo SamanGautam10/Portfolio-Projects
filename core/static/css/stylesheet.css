@@ -1,0 +1,51 @@
+body {
+    background-image: url('../images/bg-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif; /* Change to a font that matches the vibe of mountains */
+    color: #333;
+    height: 100vh; /* Full height for vertical centering */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for vertical centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 15px; /* More rounded edges */
+    background-color: rgba(255, 255, 255, 0.60); /* Translucent background */
+}
+
+.form-control {
+    border-radius: 10px; /* Rounded text areas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for text areas */
+}
+
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-danger {
+    background-color: #db4437;
+    border-color: #db4437;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif; /* Matching the vibe of mountains */
+    color: #333;
+}
+
+.btn-sm {
+    padding: 0.40rem 0.8rem;
+    font-size: 0.890rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
