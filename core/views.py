@@ -24,4 +24,4 @@ def register(request):
     
 
 def login(request):
-    return HttpResponse("This is login page.")
+    return render(request, 'core/login.html')
