@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gonzaga', sans-serif;
+            background-color: #f0f8ff;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid #ccc;
+        }
+        .form-control {
+            border-radius: 10px;
+        }
+        .gender-radio input[type="radio"] {
+            transform: scale(1.5);
+            margin-right: 10px;
+        }
+
+        .gender-radio input[type="radio"]:checked {
+            background-color: blue;
+        }
+        .gender-radio input[type="radio"].male:checked + label {
+            color: blue;
+        }
+        .gender-radio input[type="radio"].female:checked + label {
+            color: pink;
+        }
+        .gender-radio input[type="radio"].female:checked {
+            background-color: pink;
+        }
+        .gender-radio label {
+            font-size: 1.2em;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-row .form-group {
+            flex: 0 0 48%;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="POST" action="{% url 'addDetail' %}">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstname" class="form-control" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastname" class="form-control" id="lastName" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="section">Section</label>
+                <input type="text" name="section" class="form-control" id="section" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" class="form-control" id="dob" required>
+            </div>
+            <div class="form-group gender-radio">
+                <label>Gender</label><br>
+                <input type="radio" id="male" name="gender" value="male" class="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" class="female">
+                <label for="female">Female</label>
+            </div>
+            <div class="form-group">
+                <label for="faculty">Faculty</label>
+                <select name="faculty" class="form-control" id="faculty" required>
+                    <option value="Computing">Computing</option>
+                    <option value="Mobile Application Development">Mobile Application Development</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Multimedia">Multimedia</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
