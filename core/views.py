@@ -4,7 +4,7 @@ from .models import *
 
 
 def index(request):
-    return render(request, 'core/index.html')
+    return render(request, template_name='core/index.html')
 
 def register(request):
     if request.method == 'POST':
@@ -17,19 +17,19 @@ def register(request):
         userDetail = UserDetail(username = user_name, gender = gender_select, email = email_address, password = password_set)
         userDetail.save()
 
-        return render(request, 'core/confirm.html')
+        return render(request, template_name='core/confirm.html')
     
     else:
         return HttpResponse("Error Happen")
     
 
 def login(request):
-    return render(request, 'core/login.html')
+    return render(request, template_name='core/login.html')
 
 
 # Student operations
 def option(request):
-    return render(request, 'core/option.html')
+    return render(request, template_name='core/option.html')
 
 def addDetail(request):
     if request.method == 'POST':
@@ -51,16 +51,16 @@ def addDetail(request):
                                        faculty = faculty_set, 
                                        section = section_set)
         studentDetail.save()
-        return render(request, 'core/confirmadd.html')
+        return render(request, template_name='core/confirmadd.html')
     
     # In Case of error
     else:
         return HttpResponse("You have encountered error")
 
 def addStudent(request):
-    return render(request, 'core/addstudent.html')
+    return render(request, template_name='core/addstudent.html')
 
 
 
 def viewStudent(request):
-    return render(request, 'core/viewstudent.html')
+    return render(request, template_name='core/viewstudent.html')
