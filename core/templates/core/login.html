@@ -15,7 +15,7 @@
                 <div class="card mt-6">
                     <div class="card-body">
                         <h3 class="text-center mb-4">Login Account</h3>
-                        <form method="POST" action="{% url 'login_check' %}">
+                        <form method="POST" action="{% url 'login' %}">
                             {% csrf_token %}
                             <div class="form-group">
                                 <label for="username">Username</label>
@@ -26,7 +26,7 @@
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block btn-sm mt-4">Login</button>
+                            <input type="submit" class="btn btn-primary btn-block btn-sm mt-4"></button>
                             <div class="text-center mt-4">
                                 <button type="button" class="btn btn-danger btn-block btn-sm" onclick="googleLogin()">
                                     <i class="fab fa-google pr-2"></i> Sign up with Google

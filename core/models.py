@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password, check_password
 
 # models for registration page
 class UserDetail(models.Model):
@@ -7,6 +8,12 @@ class UserDetail(models.Model):
     gender = models.CharField(max_length=10)
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=20)
+
+    # password hasing function
+    def save(self, *args, **kwargs):
+        if self.pk is None:
+            self.password = make_password(self.password)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.userId} - {self.username}"

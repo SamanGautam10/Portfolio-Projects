@@ -3,9 +3,10 @@ from . import views
 
 urlpatterns = [
     path('index/', views.index, name='index'),
-    path('login/', views.login, name='login'),
     path("register/", views.register, name='register'), # registration function in views
-    path("login_check/", views.login, name="login_check"),
+    path('login/', views.login_view, name='login'),
+    path("login/successful", views.welcome, name="dashboard"),
+    path("login/unsuccessful", views.error, name="error"),
 
     # Student Operations
     path('student/', views.option, name='optionpage'),

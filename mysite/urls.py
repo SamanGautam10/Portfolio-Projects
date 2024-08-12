@@ -6,5 +6,5 @@ from core.views import *
 urlpatterns = [
     path("core/", include("core.urls")),
     path("admin/", admin.site.urls),
-    path("",views.landing, name="landing")
+    path("",views.landing, name="landing"),
 ]
