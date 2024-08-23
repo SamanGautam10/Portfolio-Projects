@@ -37,6 +37,8 @@ def login_view(request):
             user = UserDetail.objects.get(username=username)
             if check_password(password, user.password): 
 
+                # request.session['user_id'] = user.username
+
                 # if login is successful
                 messages.success(request, f"Welcome back, {username}!")
                 return redirect('dashboard') 
